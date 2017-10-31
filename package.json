@@ -1,7 +1,7 @@
 {
   "name": "gameforbrain",
-  "version": "1.0.1",
-  "description": "temporary project",
+  "version": "1.0.3",
+  "description": "move forward",
    "bin": {
     "brain-games": "dist/bin/brain-games.js"
  },
