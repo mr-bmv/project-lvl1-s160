@@ -1,18 +1,16 @@
 import readlineSync from 'readline-sync';
 
-export const welcome = () => {
+export const greeting = () => {
   console.log('Welcome to Brain Games!');
 };
 
-export const gameRules = () => {
-  console.log('Answer "yes" if number even otherwise answer "no".');
-  console.log('');
+export const rulesShow = () => {
+  console.log('Answer "yes" if number even otherwise answer "no".\n');
 };
 
 export const userGreeting = () => {
   const actual = readlineSync.question('May I have your name? ');
   console.log(`Hello, ${actual}`);
-  console.log('');
   return actual;
 };
 
@@ -28,25 +26,22 @@ export const askYourAnswer = () => {
   return yourAnswer;
 };
 
-export const congratulations = (name) => {
+export const congratulat = (name) => {
   console.log(`Congratulations, ${name}!`);
 };
 
-const correctAnswer = () => {
+const showCorret = () => {
   console.log('Correct!!!');
-  console.log('');
 };
 
-const tryAgain = () => {
-  console.log('you can dial just "yes" or "no"');
-  console.log('Try again!');
-  console.log('');
+const tryAgain = (varNumber, yourAnswer, name) => {
+  const correct = varNumber % 2 === 0 ? 'yes' : 'no';
+  console.log(`'${yourAnswer}' is wrong answer ;(. Correct answer was '${correct}'. Let's try again, ${name}!`);
 };
 
 const wrongAnswer = (yourAnswer, name) => {
   const correct = yourAnswer === 'yes' ? 'no' : 'yes';
   console.log(`'${yourAnswer}' is wrong answer ;(. Correct answer was '${correct}'. Let's try again, ${name}!`);
-  console.log('');
 };
 
 export const playEvenGame = (name) => {
@@ -58,23 +53,23 @@ export const playEvenGame = (name) => {
 
     if (varNumber % 2 === 0) {
       if (yourAnswer === 'yes') {
-        correctAnswer();
+        showCorret();
         sumOfCorrectAnswer += 1;
       } else if (yourAnswer === 'no') {
         wrongAnswer(yourAnswer, name);
       } else {
-        tryAgain();
+        tryAgain(varNumber, yourAnswer, name);
       }
     }
 
     if (varNumber % 2 !== 0) {
       if (yourAnswer === 'no') {
-        correctAnswer();
+        showCorret();
         sumOfCorrectAnswer += 1;
       } else if (yourAnswer === 'yes') {
         wrongAnswer(yourAnswer, name);
       } else {
-        tryAgain();
+        tryAgain(varNumber, yourAnswer, name);
       }
     }
   }

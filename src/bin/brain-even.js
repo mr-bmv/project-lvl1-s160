@@ -1,9 +1,4 @@
 #!/usr/bin/env node
-import { welcome, userGreeting, gameRules,
-  playEvenGame, congratulations } from '..';
+import even from '../games/even';
 
-welcome();
-gameRules();
-const actual = userGreeting();
-playEvenGame(actual);
-congratulations(actual);
+even();
