@@ -1,7 +1,7 @@
 {
   "name": "gameforbrain",
-  "version": "1.1.0",
-  "description": "move forward",
+  "version": "1.1.1",
+  "description": "even game",
   "bin": {
     "brain-games": "dist/bin/brain-games.js",
     "brain-even": "dist/bin/brain-even.js"
