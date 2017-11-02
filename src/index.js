@@ -40,7 +40,7 @@ export const letsPlay = (userAnswer, correctAnswer, name, sum, game) => {
       sumOfCorrectAnswer += 1;
       return generateEvenQuetion(sumOfCorrectAnswer, name, game);
     }
-    if (correctAnswer === userAnswer && game === 'gcd') {
+    if (correctAnswer == userAnswer && game === 'gcd') {
       showCorret();
       sumOfCorrectAnswer += 1;
       return generateGcdQuetion(sumOfCorrectAnswer, name, game);
