@@ -1,10 +1,11 @@
 {
   "name": "gameforbrain",
-  "version": "1.1.1",
-  "description": "even game",
+  "version": "1.2.2",
+  "description": "even&calc games",
   "bin": {
     "brain-games": "dist/bin/brain-games.js",
-    "brain-even": "dist/bin/brain-even.js"
+    "brain-even": "dist/bin/brain-even.js",
+    "brain-calc": "dist/bin/brain-calc.js"
   },
   "main": "dist/index.js",
   "scripts": {

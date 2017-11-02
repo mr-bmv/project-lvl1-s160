@@ -1,8 +1,8 @@
-import { getUserName, rulesShow, letsPlay, congratulat,
+import { getUserName, letsPlay, congratulat,
   getUserAnswer } from '..';
 
 export const generateEvenQuetion = (sumOfCorrectAnswer, name, game) => {
-  if(sumOfCorrectAnswer === 3){
+  if (sumOfCorrectAnswer === 3) {
     const con = congratulat(name);
     return con;
   }
@@ -17,8 +17,8 @@ export const generateEvenQuetion = (sumOfCorrectAnswer, name, game) => {
 };
 
 export default () => {
-    const name = getUserName();
-    const sumOfCorrectAnswer = 0;
-    const game = 'even';
-    generateEvenQuetion(sumOfCorrectAnswer, name, game);
-  }
+  const name = getUserName();
+  const sumOfCorrectAnswer = 0;
+  const game = 'even';
+  generateEvenQuetion(sumOfCorrectAnswer, name, game);
+};
