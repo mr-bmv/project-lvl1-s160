@@ -1,7 +1,7 @@
 {
   "name": "gameforbrain",
-  "version": "1.3.2",
-  "description": "even&calc games",
+  "version": "1.3.3",
+  "description": "even&calc&gcd games",
   "bin": {
     "brain-games": "dist/bin/brain-games.js",
     "brain-even": "dist/bin/brain-even.js",
@@ -23,6 +23,7 @@
   "author": "bmv",
   "license": "ISC",
   "dependencies": {
+    "hexlet-pairs": "^1.0.5",
     "readline-sync": "^1.4.7"
   },
   "devDependencies": {

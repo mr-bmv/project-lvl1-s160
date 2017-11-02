@@ -1,13 +1,8 @@
-import { getUserName, letsPlay, congratulat,
-  getUserAnswer } from '..';
+import { cons } from 'hexlet-pairs';
+import play from '..';
 
-
-export const generateCalcQuetion = (sumOfCorrectAnswer, name, game) => {
-  if (sumOfCorrectAnswer === 3) {
-    const con = congratulat(name);
-    return con;
-  }
-
+// функция, которую будем переписывать под кадую игру
+export const generatePair = () => { // генерируем пару вопрос/правильный ответ
   const varNumber1 = Math.ceil(Math.random() * 10);
   const varNumber2 = Math.ceil(Math.random() * 10);
 
@@ -22,34 +17,25 @@ export const generateCalcQuetion = (sumOfCorrectAnswer, name, game) => {
   };
 
   const symbol = creatSymbol();
-
-  let correctAnswer = 0;
+  const quetionText = `Question: ${varNumber1}${symbol}${varNumber2}`;
+  let correctAnswer;
 
   switch (symbol) {
-    case '+':
-      console.log(`Question: ${varNumber1}${symbol}${varNumber2}`);
-      correctAnswer = varNumber1 + varNumber2;
-      break;
     case '-':
-      console.log(`Question: ${varNumber1}${symbol}${varNumber2}`);
-      correctAnswer = varNumber1 - varNumber2;
+      correctAnswer = String(varNumber1 - varNumber2);
       break;
     case '*':
-      console.log(`Question: ${varNumber1}${symbol}${varNumber2}`);
-      correctAnswer = varNumber1 * varNumber2;
+      correctAnswer = String(varNumber1 * varNumber2);
       break;
     default:
-      console.log(`Question: ${varNumber1}${symbol}${varNumber2}`);
-      correctAnswer = varNumber1 + varNumber2;
+      correctAnswer = String(varNumber1 + varNumber2);
   }
 
-  const userAnswer = getUserAnswer();
-  return letsPlay(userAnswer, correctAnswer, name, sumOfCorrectAnswer, game);
+  return cons(quetionText, correctAnswer);
 };
 
 export default () => {
-  const name = getUserName();
-  const sumOfCorrectAnswer = 0;
-  const game = 'calc';
-  generateCalcQuetion(sumOfCorrectAnswer, name, game);
+  const getPair = () => generatePair();
+  const createRules = () => 'What is the result of the expression?\n';
+  play(getPair, createRules);
 };
