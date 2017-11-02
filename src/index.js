@@ -1,6 +1,7 @@
 import readlineSync from 'readline-sync';
 import { generateCalcQuetion } from './games/calc';
 import { generateEvenQuetion } from './games/even';
+import { generateGcdQuetion } from './games/gcd';
 
 export const getUserName = () => { // узнаем имя
   const name = readlineSync.question('May I have your name? ');
@@ -34,10 +35,15 @@ export const letsPlay = (userAnswer, correctAnswer, name, sum, game) => {
       sumOfCorrectAnswer += 1;
       return generateCalcQuetion(sumOfCorrectAnswer, name, game);
     }
-    if (correctAnswer == userAnswer && game === 'even') {
+    if (correctAnswer === userAnswer && game === 'even') {
       showCorret();
       sumOfCorrectAnswer += 1;
       return generateEvenQuetion(sumOfCorrectAnswer, name, game);
+    }
+    if (correctAnswer === userAnswer && game === 'gcd') {
+      showCorret();
+      sumOfCorrectAnswer += 1;
+      return generateGcdQuetion(sumOfCorrectAnswer, name, game);
     }
 
     return showWrong(userAnswer, name, correctAnswer);
