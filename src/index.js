@@ -1,34 +1,33 @@
 import readlineSync from 'readline-sync';
 import { car, cdr } from 'hexlet-pairs';
 
-export const getUserName = () => { // узнаем имя
+export const getUserName = () => {
   const name = readlineSync.question('May I have your name? ');
   console.log(`Hello, ${name}`);
   return name;
 };
 
-export const getUserAnswer = () => { // получаем ответ юзера
+export const getUserAnswer = () => {
   const yourAnswer = readlineSync.question('Your answer: ');
   return yourAnswer;
 };
 
-export const congratulate = (name) => { // поздравляем юзера
+export const congratulate = (name) => {
   console.log(`Congratulations, ${name}!`);
 };
 
-const showCorret = () => { // вывод ПРАВИЛЬНОГО ответа
+const showCorret = () => {
   console.log('Correct!!!');
 };
 
-const showWrong = (yourAnswer, userName, correctAnswer) => { // вывод НЕПРАВИЛЬНОГО ответа
+const showWrong = (yourAnswer, userName, correctAnswer) => {
   console.log(`'${yourAnswer}' is wrong answer ;(. Correct answer was
     '${correctAnswer}'. Let's try again, ${userName}!`);
 };
 
-export default (getPair, rules) => { // тело игры- - постоянная структура. запрос переменных
+export default (getPair, rules) => { // stable structure body of game
   console.log('Welcome to Brain Games!');
-  const rulesText = rules();
-  console.log(rulesText);
+  console.log(rules);
   const userName = getUserName();
 
   const iter = (sumOfCorrectAnswer) => {
@@ -36,7 +35,7 @@ export default (getPair, rules) => { // тело игры- - постоянна�
       return congratulate(userName);
     }
 
-    const pairForGame = getPair(); // пара на первый круг
+    const pairForGame = getPair(); // it's pair for every new loop
 
     const quetionText = car(pairForGame);
     console.log(quetionText);

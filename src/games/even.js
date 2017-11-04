@@ -11,6 +11,6 @@ export const generatePair = () => {
 
 export default () => {
   const getPair = () => generatePair();
-  const createRules = () => 'Answer "yes" if number even otherwise answer "no".\n';
-  play(getPair, createRules);
+  const rules = 'Answer "yes" if number even otherwise answer "no".\n';
+  play(getPair, rules);
 };

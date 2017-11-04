@@ -1,12 +1,11 @@
 import { cons } from 'hexlet-pairs';
 import play from '..';
 
-// функция, которую будем переписывать под кадую игру
-export const generatePair = () => { // генерируем пару вопрос/правильный ответ
+export const generatePair = () => { // generate pair of question/correct answer
   const varNumber1 = Math.ceil(Math.random() * 10);
   const varNumber2 = Math.ceil(Math.random() * 10);
 
-  const creatSymbol = () => { // получаем рандомный символ + - *
+  const creatSymbol = () => { // generate symbol + - *
     const symbol = Math.ceil(Math.random() * 3);
     if (symbol === 1) {
       return '+';
@@ -36,6 +35,6 @@ export const generatePair = () => { // генерируем пару вопро�
 
 export default () => {
   const getPair = () => generatePair();
-  const createRules = () => 'What is the result of the expression?\n';
-  play(getPair, createRules);
+  const rules = 'What is the result of the expression?\n';
+  play(getPair, rules);
 };

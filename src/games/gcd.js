@@ -3,9 +3,26 @@ import play from '..';
 
 export const generatePair = () => {
   const varNumber1 = Math.ceil(Math.random() * 100);
-  const gcd = Math.ceil(Math.random() * 5);
+  const varNumber2 = Math.ceil(Math.random() * 100);
 
-  const varNumber2 = varNumber1 * gcd;
+  const smaller = varNumber1 > varNumber2 ? varNumber2 : varNumber1;
+  const bigger = varNumber1 > varNumber2 ? varNumber1 : varNumber2;
+
+  const iter = (num, counter) => {
+    let newGcd = num;
+    if (counter > smaller) {
+      return num;
+    }
+
+    if (smaller % counter === 0 && bigger % counter === 0) {
+      newGcd = counter;
+    }
+
+    const sum = counter + 1;
+    return iter(newGcd, sum);
+  };
+
+  const gcd = iter(1, 1);
 
   const quetionText = `Question: ${varNumber1}  ${varNumber2} `;
 
@@ -15,6 +32,6 @@ export const generatePair = () => {
 
 export default () => {
   const getPair = () => generatePair();
-  const createRules = () => 'Find the greatest common divisor of given numbers.\n';
-  play(getPair, createRules);
+  const rules = 'Find the greatest common divisor of given numbers.\n';
+  play(getPair, rules);
 };
