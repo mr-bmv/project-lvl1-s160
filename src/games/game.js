@@ -1,7 +1,7 @@
-import { greeting, userGreeting } from '..';
+import { welcome, getUserName } from '..';
 
 export default () => {
-  greeting();
-  userGreeting();
+  welcome();
+  getUserName();
 };
 

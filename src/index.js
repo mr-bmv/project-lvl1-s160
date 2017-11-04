@@ -7,6 +7,8 @@ export const getUserName = () => {
   return name;
 };
 
+export const welcome = () => console.log('Welcome to Brain Games!');
+
 export const getUserAnswer = () => {
   const yourAnswer = readlineSync.question('Your answer: ');
   return yourAnswer;
@@ -26,8 +28,8 @@ const showWrong = (yourAnswer, userName, correctAnswer) => {
 };
 
 export default (getPair, rules) => { // stable structure body of game
-  console.log('Welcome to Brain Games!');
-  console.log(rules);
+  welcome();
+  console.log(`${rules}\n`);
   const userName = getUserName();
 
   const iter = (sumOfCorrectAnswer) => {

@@ -35,6 +35,6 @@ export const generatePair = () => { // generate pair of question/correct answer
 
 export default () => {
   const getPair = () => generatePair();
-  const rules = 'What is the result of the expression?\n';
+  const rules = 'What is the result of the expression?';
   play(getPair, rules);
 };

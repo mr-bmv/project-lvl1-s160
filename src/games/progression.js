@@ -4,14 +4,15 @@ import play from '..';
 const generatePair = () => {
   const varNumber1 = Math.ceil(Math.random() * 10);
   const progressionNumber = Math.ceil(Math.random() * 5);
+  const hideNumber = Math.ceil(Math.random() * 10);
 
   let newNumber;
-  const iter = (counter, progressionLine) => {
+  const iter = (progressionLine, counter) => {
     if (counter === 10) {
       return progressionLine;
     }
 
-    if (counter === 6) {
+    if (counter === hideNumber) {
       newNumber = '..';
     } else {
       const counterForNumber = (counter - 1) * progressionNumber;
@@ -20,11 +21,11 @@ const generatePair = () => {
 
     const newLine = `${progressionLine}  ${newNumber}`;
     const newCounter = counter + 1;
-    return iter(newCounter, newLine);
+    return iter(newLine, newCounter);
   };
 
-  const line = iter(2, varNumber1);
-  const progressionNumberRait = 5 * progressionNumber;
+  const line = iter(varNumber1, 2);
+  const progressionNumberRait = (hideNumber - 1) * progressionNumber;
   const correctAnswer = String(varNumber1 + progressionNumberRait);
 
   const quetionText = `Question: ${line}`;
@@ -34,7 +35,7 @@ const generatePair = () => {
 
 export default () => {
   const getPair = () => generatePair();
-  const rules = 'What number is missing in this progression?\n';
+  const rules = 'What number is missing in this progression?';
   play(getPair, rules);
 };
 

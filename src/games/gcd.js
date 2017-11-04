@@ -18,8 +18,7 @@ export const generatePair = () => {
       newGcd = counter;
     }
 
-    const sum = counter + 1;
-    return iter(newGcd, sum);
+    return iter(newGcd, counter + 1);
   };
 
   const gcd = iter(1, 1);

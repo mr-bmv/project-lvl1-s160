@@ -29,7 +29,7 @@ const generatePair = () => {
 
 export default () => {
   const getPair = () => generatePair();
-  const rules = 'Balance the given number.\n';
+  const rules = 'Balance the given number.';
   play(getPair, rules);
 };
 
