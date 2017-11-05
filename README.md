@@ -9,24 +9,24 @@
 After installation you can play 6 text-games:
 1. Balance. You should generat balance number based on quetion number.
 
-``` brain-balance```
+    ``` brain-balance```
 
 2. Calculation. You should calculate numbers.
 
-``` brain-calc```
+    ``` brain-calc```
 
 3. Even. You should choose which type of number you see.
 
-```brain-even```
+    ```brain-even```
 
 4. Gcd. You could try to find greatest common divisor of two shown numbers.
 
-```brain-gcd```
+    ```brain-gcd```
 
 5. Prime. You should choose which type of number you see.
 
-```brain-prime```
+    ```brain-prime```
 
 6. Progression. Try to understand progression and find hided number.
 
-```brain-progression``` 
+    ```brain-progression``` 

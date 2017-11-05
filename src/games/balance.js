@@ -22,9 +22,7 @@ const generatePair = () => {
   const balanceArray = getBalance(varNumberArray);
   const correctAnswer = balanceArray.join('');
 
-  const quetionText = `Question: ${varNumber}`;
-
-  return cons(quetionText, correctAnswer);
+  return cons(varNumber, correctAnswer);
 };
 
 export default () => {

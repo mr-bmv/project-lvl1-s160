@@ -23,7 +23,7 @@ export const generatePair = () => {
 
   const gcd = iter(1, 1);
 
-  const quetionText = `Question: ${varNumber1}  ${varNumber2} `;
+  const quetionText = `${varNumber1}  ${varNumber2}`;
 
   const correctAnswer = String(gcd);
   return cons(quetionText, correctAnswer);

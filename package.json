@@ -1,6 +1,6 @@
 {
   "name": "gameforbrain",
-  "version": "1.6.0",
+  "version": "1.6.1",
   "description": "even/calc/gcd/balance/progression/prime games",
   "bin": {
     "brain-games": "dist/bin/brain-games.js",

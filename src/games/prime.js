@@ -4,23 +4,22 @@ import play from '..';
 const generatePair = () => {
   const varNumber = Math.ceil(Math.random() * 100);
 
-  const getPrime = (number) => {
+  const isPrime = (number) => {
     if (number < 2) {
-      return 'no';
+      return false;
     }
 
     for (let i = 2; i < number; i += 1) {
       if (number % i === 0) {
-        return 'no';
+        return false;
       }
     }
-    return 'yes';
+    return true;
   };
 
-  const correctAnswer = getPrime(varNumber);
-  const quetionText = `Question: ${varNumber}`;
+  const correctAnswer = isPrime(varNumber) ? 'yes' : 'no';
 
-  return cons(quetionText, correctAnswer);
+  return cons(varNumber, correctAnswer);
 };
 
 export default () => {

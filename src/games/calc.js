@@ -16,7 +16,7 @@ export const generatePair = () => { // generate pair of question/correct answer
   };
 
   const symbol = creatSymbol();
-  const quetionText = `Question: ${varNumber1}${symbol}${varNumber2}`;
+  const quetionText = `${varNumber1}${symbol}${varNumber2}`;
   let correctAnswer;
 
   switch (symbol) {

@@ -40,7 +40,7 @@ export default (getPair, rules) => { // stable structure body of game
     const pairForGame = getPair(); // it's pair for every new loop
 
     const quetionText = car(pairForGame);
-    console.log(quetionText);
+    console.log(`Question: ${quetionText}`);
     const correctAnswer = cdr(pairForGame);
 
     const userAnswer = getUserAnswer();

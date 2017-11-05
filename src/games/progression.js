@@ -28,9 +28,7 @@ const generatePair = () => {
   const progressionNumberRait = (hideNumber - 1) * progressionNumber;
   const correctAnswer = String(varNumber1 + progressionNumberRait);
 
-  const quetionText = `Question: ${line}`;
-
-  return cons(quetionText, correctAnswer);
+  return cons(line, correctAnswer);
 };
 
 export default () => {
